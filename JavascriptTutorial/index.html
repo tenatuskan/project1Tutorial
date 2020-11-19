@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Javascript tutorial</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">  
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div class="intro">
+        <h2>WHAT IS JAVASCRIPT?</h2>
+        <p>JavaScript is one of the three core programming languages of the website after HTML and CSS. It is a scripting language responsible for adding additional behavior and interactivity to your website, meaning you can make the web page alive. 
+        <h2>WHAT CAN YOU DO WITH IT?</h2>
+        With JavaScript you can create amazing websites, develop apps & games, and beautiful desktop applications. What makes this programming language unique is its ability to run in your browser directly. It allows to change existing content and modify styles, react to user actions, download and upload files, show messages and many other functions. 
+        What we focus on in this tutorial will be JavaScript’s ability to react to keyboard events, that describe a single interaction between a user and a key on the keyboard. <b> Specifically, we will focus on keydown event, that becomes active after a user presses the key on the keyboard. </b> </p>
+    </div>
+    <h1>JAVASCRIPT KEYBOARD EVENT TUTORIAL</h1>
+    <div>
+        <h3>STEP 1.</h3>
+        <p>Create project folder containing the rest of files and folders as following.</p>
+        <div class="imgFolders">
+            <img src="images/example.png" alt="folder" class="folder">  
+        </div>    
+    </div>
+    <div>
+        <h3>STEP2</h3>
+        <p>In index.html file create basic HTML5 body. Connect html with CSS and Javascript files.</p>
+        <pre>
+            <div class="code">            
+            &lt;doctype html&gt;   
+            &lt;html&gt;    
+            &lt;head&gt;    
+            &lt;meta charset=‘utf-8’/&gt;   
+            &lt;meta name=‘viewport’ content=‘width=device-width, initial-scale=1.0’/&gt;    
+            &lt;title&gt;Keyboard event in Javascript&lt;/title&gt; 
+            <b>&lt;link rel="stylesheet" href="style/style.css"&gt;</b> 
+            &lt;head&gt;    
+                &lt;body&gt;    
+                <b>&lt;script src=‘script.js’&gt;&lt;/script&gt;</b>   
+                &lt;/body&gt;   
+            &lt;/html&gt;   
+            </div>
+        </pre>
+       
+        
+    </div>
+    <div>
+        <h3>STEP 3</h3>
+        <p> Import image element that will be moved around and give it an ID and CLASS attribute. </p>
+        <pre>
+            <div class="code">            
+            &lt;doctype html&gt;   
+            &lt;html&gt;    
+            &lt;head&gt;    
+            &lt;meta charset=‘utf-8’/&gt;   
+            &lt;meta name=‘viewport’ content=‘width=device-width, initial-scale=1.0’/&gt;    
+            &lt;title&gt;Arrow Keys in Java Script&lt;/title&gt;  
+            &lt;head&gt;    
+                &lt;body&gt;  
+                 <b>&lt;img id=“cat” class="kat" src=“images/cat.png”&gt;</b>  
+                    &lt;script src=‘script.js’&gt;&lt;/script&gt;  
+                &lt;/body&gt;   
+            &lt;/html&gt;   
+            </div>
+        </pre>
+    </div>
+    <div>
+        <h3>STEP 4</h3>
+        <p>Go in to script.js file and call for the HTML element.
+        </p>
+        <pre>
+            <div class="code">
+            let img = document.getElementByid(‘cat’)
+            </div>
+        </pre>
+    </div>
+    <div>
+        <h3>STEP 5</h3>
+        <p>To see if key is pressed,
+            create two variables and assign value to it.</p>
+        <pre>
+            <div class="code">
+            let img = document.getElementByid(‘cat’)
+            let posLeft = 0;
+            let posTop = 0;
+            </div>
+        </pre>
+    </div>
+    <div>
+        <h3>STEP 6</h3>
+        <p>Make function assigned to variable that access the event.</p>
+        <pre>
+            <div class="code">
+            const doSomething = (e) => {
+                console.log(e);
+                console.log(e.key);
+                console.log(e.code);
+                };
+            </div>
+        </pre>
+    </div>
+    <div>
+        <h3>STEP 7</h3>
+        <p>In this step is introduction to switch statement .
+            The key property set in a keyboard event is a string.
+            It needs to check that string for a match and adjust the properties of the object,
+            depending on which key the user pressed. </p>
+        <pre>
+            <div class="code">
+            switch (e.key) {
+                case “Down”:
+                case “ArrowDown”:
+                if(posTop &lt;= window.innerHeight - 600){
+                    posTop+= 20
+                    img.style.top = posTop +”px”;
+                } break;
+                
+                case ”Up”: 
+                case ”arrowUp”:
+                if(posTop >= 30) {
+                    posTop -=20
+                    img.style.top = posTop + “px”;
+                }
+                
+                case “Right”:
+                case “ArrowRight”:
+                if (posLeft &lt;= window.innerWidth - 300) { posLeft += 30;
+                    catCharacter.style.left = posLeft + “px”;
+                } 
+                break;
+                
+                case “Left”:
+                case “ArrowLeft”:
+                posLeft -= 15;
+                catCharacter.style.left = posLeft + “px”;
+                } 
+                
+            </div>
+        </pre>
+    </div>
+    <div>
+        <h3>STEP 8</h3>
+        <p>Create Event listener to listen “Keydown” event.</p>
+        <pre>
+            <div class="code">
+            document.addEventListener(“keydown”, doSomething);
+            </div>
+        </pre>
+    </div>
+    <div>
+        <h3>STEP 9</h3>
+        <p>Following code is used to disable scrolling when the keys are pressed.</p>
+        <pre>
+            <div class="code">
+            window.addEventListener("keydown", function(e) { 
+                if([37, 38, 39, 40].indexOf(e.keyCode) > -1) { 
+                    e.preventDefault(); 
+                } 
+            }, false);
+            </div>
+        </pre>
+    </div>
+
+    <div class="button">
+        <a href="demo.html" class="btn">TRY IT YOURSELF</a>
+    </div>
+
+
+
+<script src="js/script.js"></script>
+</body>
+</html>

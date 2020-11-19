@@ -1,0 +1,62 @@
+body{
+    background-color: #212624;
+    margin: 0em 10em;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+        
+}
+
+.intro{
+    color: #F2CA80;
+    padding: 10em ;
+    text-align: center;
+}
+
+h1{
+    background-color: #F2CA80;
+    color:  #212624;
+    text-align: center;
+    padding: 3em;
+}
+
+.code{
+    border-style: solid;
+    border-color: #F2CA80;
+    border-radius: 1em;
+    padding: 1em;
+    font-family: 'Inconsolata', monospace;
+}
+
+.imgFolders{
+    padding: 5em;
+    text-align: center;
+    border-style: solid;
+    border-color: #F2CA80;
+    border-radius: 1em;
+}
+
+.folder{
+    width: 500px;
+    padding: 1em;
+}
+
+.btn{
+    background-color:#F2CA80; 
+    border-radius: 1em;
+    color: #212624;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    font-size: 20px;
+}
+
+.button{
+    text-align: center;
+    padding: 1em;
+}
+
+.kat{
+    width: 100px;
+    position: absolute;
+}
